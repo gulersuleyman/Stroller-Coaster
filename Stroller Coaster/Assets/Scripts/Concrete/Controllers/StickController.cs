@@ -6,6 +6,8 @@ public class StickController : MonoBehaviour
 {
     [SerializeField] float _rotationSpeed;
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject _trej;
+
     
     float _centerPosition, _currentPosition, _lastPosition;
 
@@ -14,6 +16,8 @@ public class StickController : MonoBehaviour
     void Awake()
     {
         _input = new InputController();
+
+        _trej.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,7 +50,7 @@ public class StickController : MonoBehaviour
     {
         if (_input.FirstMouseClick)
         {
-
+            _trej.gameObject.SetActive(true);
             _centerPosition = Input.mousePosition.x;
             _lastPosition = transform.eulerAngles.y;
         }
@@ -58,6 +62,10 @@ public class StickController : MonoBehaviour
             transform.eulerAngles = new Vector3(transform.eulerAngles.x,
                 ((_currentPosition - _centerPosition) * _rotationSpeed) + _lastPosition + _player.transform.eulerAngles.y,
                 transform.eulerAngles.z);
+        }
+        else
+        {
+            _trej.gameObject.SetActive(false);
         }
     }
 }

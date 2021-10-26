@@ -10,20 +10,33 @@ public class BallSpawner : MonoBehaviour
 
     float _curretnSpawnTime;
     float _timeBoundary;
+    bool _fire;
 
-
-
-    private void Start()
+    InputController _input;
+    private void Awake()
     {
-        ResetTimes();
+        _input = new InputController();
+
+
+        _fire = false;
+        //ResetTimes();
     }
     private void Update()
     {
-        _curretnSpawnTime += Time.deltaTime;
-        if (_curretnSpawnTime > _timeBoundary)
+        //_curretnSpawnTime += Time.deltaTime;
+        //if (_curretnSpawnTime > _timeBoundary)
+        //{
+        //    Spawn();
+        //    ResetTimes();
+        //}
+        if (_input.MouseUp) _fire = true;
+    }
+    private void FixedUpdate()
+    {
+        if(_fire)
         {
             Spawn();
-            ResetTimes();
+            _fire = false;
         }
     }
     public void Spawn()
