@@ -6,7 +6,7 @@ public class StickController : MonoBehaviour
 {
     [SerializeField] float _rotationSpeed;
     [SerializeField] GameObject _player;
-
+    [SerializeField] Camera _camera;
     float _centerPosition, _currentPosition, _lastPosition;
 
 
@@ -19,7 +19,8 @@ public class StickController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DragMouse();
+        // DragMouse();
+        Drg();
     }
 
     private void DragMouse()
@@ -37,6 +38,29 @@ public class StickController : MonoBehaviour
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x,
                 ((_currentPosition - _centerPosition)*_rotationSpeed)+_lastPosition+_player.transform.eulerAngles.y,
+                transform.eulerAngles.z);
+        }
+    }
+    private void Drg()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray,out RaycastHit raycastHit))
+            {
+                _centerPosition = raycastHit.point.x;
+            }
+            _lastPosition = transform.eulerAngles.y;
+        }
+        if (Input.GetMouseButton(0))
+        {
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit raycastHit))
+            {
+                _currentPosition = raycastHit.point.x;
+            }
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x,
+                ((_currentPosition - _centerPosition) * _rotationSpeed) + _lastPosition + _player.transform.eulerAngles.y,
                 transform.eulerAngles.z);
         }
     }
