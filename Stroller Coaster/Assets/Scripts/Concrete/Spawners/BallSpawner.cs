@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] GameObject _ball;
+    [SerializeField] float _ballSpeed;
+
+    float _curretnSpawnTime;
+    float _timeBoundary;
+
+
+
+    private void Start()
     {
-        
+        ResetTimes();
+    }
+    private void Update()
+    {
+        _curretnSpawnTime += Time.deltaTime;
+        if (_curretnSpawnTime > _timeBoundary)
+        {
+            Spawn();
+            ResetTimes();
+        }
+    }
+    public void Spawn()
+    {
+        GameObject ball = Instantiate(_ball, transform.position, Quaternion.identity);
+        ball.GetComponent<Rigidbody>().velocity = transform.forward * _ballSpeed * Time.deltaTime;
+        Destroy(ball.gameObject, 3f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ResetTimes()
     {
-        
+        _curretnSpawnTime = 0f;
+        _timeBoundary = 0.3f;
     }
 }
