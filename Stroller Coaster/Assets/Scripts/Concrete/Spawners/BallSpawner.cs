@@ -36,6 +36,6 @@ public class BallSpawner : MonoBehaviour
     private void ResetTimes()
     {
         _curretnSpawnTime = 0f;
-        _timeBoundary = 0.3f;
+        _timeBoundary = 0.5f;
     }
 }

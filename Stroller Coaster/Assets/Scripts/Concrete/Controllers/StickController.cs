@@ -9,11 +9,11 @@ public class StickController : MonoBehaviour
     
     float _centerPosition, _currentPosition, _lastPosition;
 
-
+    InputController _input;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        _input = new InputController();
     }
 
     // Update is called once per frame
@@ -44,13 +44,13 @@ public class StickController : MonoBehaviour
     
     private void DragMouse()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_input.FirstMouseClick)
         {
 
             _centerPosition = Input.mousePosition.x;
             _lastPosition = transform.eulerAngles.y;
         }
-        if (Input.GetMouseButton(0))
+        if (_input.MouseClick)
         {
             
             _currentPosition = Input.mousePosition.x;
