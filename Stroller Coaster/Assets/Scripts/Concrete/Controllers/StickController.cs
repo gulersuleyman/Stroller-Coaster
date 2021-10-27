@@ -10,7 +10,7 @@ public class StickController : MonoBehaviour
 
     
     float _centerPosition, _currentPosition, _lastPosition;
-
+    float _centerPositionY, _currentPositionY, _lastPositionY;
     InputController _input;
     // Start is called before the first frame update
     void Awake()
@@ -52,14 +52,17 @@ public class StickController : MonoBehaviour
         {
             _trej.gameObject.SetActive(true);
             _centerPosition = Input.mousePosition.x;
+            _centerPositionY = Input.mousePosition.y;
             _lastPosition = transform.eulerAngles.y;
+            _lastPositionY = transform.eulerAngles.x;
         }
         if (_input.MouseClick)
         {
             
             _currentPosition = Input.mousePosition.x;
+            _currentPositionY = Input.mousePosition.y;
 
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x,
+            transform.eulerAngles = new Vector3(((_centerPositionY-_currentPositionY ) * _rotationSpeed/2) + _lastPositionY,
                 ((_currentPosition - _centerPosition) * _rotationSpeed) +_lastPosition ,
                 transform.eulerAngles.z);
         }
