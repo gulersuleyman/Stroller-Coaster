@@ -60,7 +60,7 @@ public class StickController : MonoBehaviour
             _currentPosition = Input.mousePosition.x;
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x,
-                ((_currentPosition - _centerPosition) * _rotationSpeed) + _lastPosition + _player.transform.eulerAngles.y,
+                ((_currentPosition - _centerPosition) * _rotationSpeed) +_lastPosition ,
                 transform.eulerAngles.z);
         }
         else
