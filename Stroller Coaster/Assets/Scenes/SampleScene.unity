@@ -799,7 +799,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356187715}
-  - component: {fileID: 356187716}
   m_Layer: 0
   m_Name: StickHolder
   m_TagString: Untagged
@@ -823,21 +822,6 @@ Transform:
   m_Father: {fileID: 930604771}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &356187716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356187714}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3df23d6dabf4982a21d02bd9388edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 1
-  _player: {fileID: 930604768}
-  _trej: {fileID: 1138509857}
 --- !u!1 &403690576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2472,7 @@ GameObject:
   - component: {fileID: 930604770}
   - component: {fileID: 930604769}
   - component: {fileID: 930604772}
+  - component: {fileID: 930604773}
   m_Layer: 0
   m_Name: Player Left
   m_TagString: Player
@@ -2551,6 +2536,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.778028, z: 0.73640805}
   m_Center: {x: 0, y: -0.013872862, z: 0.00693658}
+--- !u!114 &930604773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930604768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85657a00264c4c3d84a1c9ed6a182d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ball: {fileID: 1957243374201818051, guid: ee5a4ec27d5eb439bb830af87c3e9555, type: 3}
+  _player: {fileID: 228248396}
+  _target: {fileID: 82771005}
 --- !u!1 &950500251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,7 +4328,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826221658}
-  - component: {fileID: 1826221659}
   m_Layer: 0
   m_Name: StickHolder
   m_TagString: Untagged
@@ -4352,21 +4351,6 @@ Transform:
   m_Father: {fileID: 1865519684}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1826221659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826221657}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3df23d6dabf4982a21d02bd9388edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 1
-  _player: {fileID: 1865519681}
-  _trej: {fileID: 1678051070}
 --- !u!1 &1832387350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,6 +4636,7 @@ GameObject:
   - component: {fileID: 1865519683}
   - component: {fileID: 1865519682}
   - component: {fileID: 1865519685}
+  - component: {fileID: 1865519686}
   m_Layer: 0
   m_Name: Player Right
   m_TagString: Player
@@ -4715,6 +4700,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.56992865, z: 0.59767526}
   m_Center: {x: 0, y: 0.0069367886, z: 0.0069366395}
+--- !u!114 &1865519686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865519681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85657a00264c4c3d84a1c9ed6a182d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ball: {fileID: 1957243374201818051, guid: ee5a4ec27d5eb439bb830af87c3e9555, type: 3}
+  _player: {fileID: 228248396}
+  _target: {fileID: 1535899911}
 --- !u!1 &1867876443
 GameObject:
   m_ObjectHideFlags: 0
