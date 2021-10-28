@@ -43,7 +43,7 @@ public class BallSpawner : MonoBehaviour
     {
         GameObject ball = Instantiate(_ball, transform.position, Quaternion.identity);
         ball.GetComponent<Rigidbody>().velocity = transform.forward * _ballSpeed * Time.deltaTime;
-        Destroy(ball.gameObject, 3f);
+        Destroy(ball.gameObject, 2f);
     }
 
     private void ResetTimes()

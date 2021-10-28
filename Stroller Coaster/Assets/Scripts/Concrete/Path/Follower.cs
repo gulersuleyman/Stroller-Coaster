@@ -6,7 +6,7 @@ using PathCreation;
 public class Follower : MonoBehaviour
 {
     [SerializeField] PathCreator _pathCreator;
-    [SerializeField] float _speed;
+    public float _speed;
 
     float _distanceTravelled;
     float _firstSpeed;
