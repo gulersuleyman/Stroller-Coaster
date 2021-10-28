@@ -8,8 +8,7 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] GameObject _ball;
     [SerializeField] float _ballSpeed;
 
-    float _curretnSpawnTime;
-    float _timeBoundary;
+    
     bool _fire;
 
     InputController _input;
@@ -19,16 +18,11 @@ public class BallSpawner : MonoBehaviour
 
 
         _fire = false;
-        //ResetTimes();
+        
     }
     private void Update()
     {
-        //_curretnSpawnTime += Time.deltaTime;
-        //if (_curretnSpawnTime > _timeBoundary)
-        //{
-        //    Spawn();
-        //    ResetTimes();
-        //}
+        
         if (_input.MouseUp) _fire = true;
     }
     private void FixedUpdate()
@@ -43,12 +37,8 @@ public class BallSpawner : MonoBehaviour
     {
         GameObject ball = Instantiate(_ball, transform.position, Quaternion.identity);
         ball.GetComponent<Rigidbody>().velocity = transform.forward * _ballSpeed * Time.deltaTime;
-        Destroy(ball.gameObject, 2f);
+        Destroy(ball.gameObject, 3f);
     }
 
-    private void ResetTimes()
-    {
-        _curretnSpawnTime = 0f;
-        _timeBoundary = 0.5f;
-    }
+    
 }
