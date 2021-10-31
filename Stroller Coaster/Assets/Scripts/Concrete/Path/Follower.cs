@@ -37,4 +37,12 @@ public class Follower : MonoBehaviour
         transform.position = _pathCreator.path.GetPointAtDistance(_distanceTravelled);
         transform.rotation = _pathCreator.path.GetRotationAtDistance(_distanceTravelled);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Increase"))
+        {
+            _speed += 2f;
+        }
+    }
 }
