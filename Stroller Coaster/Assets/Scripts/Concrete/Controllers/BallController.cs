@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
    
     GameObject _other;
     Rigidbody _rigidbody;
-    MeshRenderer _meshRenderer;
+    
 
 
     private void Awake()
@@ -34,7 +34,6 @@ public class BallController : MonoBehaviour
 
             }
 
-           
         }
     }
 

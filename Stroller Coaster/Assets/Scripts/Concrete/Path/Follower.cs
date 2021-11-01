@@ -40,9 +40,14 @@ public class Follower : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Increase"))
+        if(other.CompareTag("Decrease"))
         {
-            _speed += 2f;
+            _speed -= 4f;
         }
+        if (other.CompareTag("Increase"))
+        {
+            _speed += 4f;
+        }
+        
     }
 }
