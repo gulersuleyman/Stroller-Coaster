@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
             GameObject ball= Instantiate(_ball, _target.position, Quaternion.identity);
             ball.GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(_target.position, _player.transform.position, 0.1f);
             _fireTime = 0f;
+            Destroy(ball.gameObject, 3f);
         }
     }
 }

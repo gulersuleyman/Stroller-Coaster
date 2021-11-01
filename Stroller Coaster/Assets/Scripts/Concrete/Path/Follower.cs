@@ -48,6 +48,12 @@ public class Follower : MonoBehaviour
         {
             _speed += 4f;
         }
-        
+        if (other.CompareTag("Stop"))
+        {
+            _speed = 0f;
+            _isRunning = false;
+            _characterAnim.RunningAnimation(_isRunning);
+        }
+
     }
 }

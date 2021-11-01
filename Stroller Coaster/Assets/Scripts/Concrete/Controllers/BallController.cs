@@ -7,7 +7,9 @@ public class BallController : MonoBehaviour
     float _currentSpeed=0f,_firstSpeed;
     float _waitTime=0f, _waitTimeBoundary=2f;
     bool _ballTouch=false;
-   
+
+    public GameObject _brokenGlass;
+
     GameObject _other;
     Rigidbody _rigidbody;
     
@@ -48,9 +50,15 @@ public class BallController : MonoBehaviour
             _other = other.gameObject;
             _rigidbody.velocity = Vector3.zero;
             this.gameObject.transform.localScale = Vector3.zero;
-          
-
+         
         }
+        if (other.CompareTag("box"))
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
+        
+
     }
     private void ResetSpeed()
     {
